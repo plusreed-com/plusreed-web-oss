@@ -1,11 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, Suspense } from 'react';
+import Home from './Home';
 
 class App extends Component {
     render() {
         return (
-            <>
-                <h1>Hello.</h1>
-            </>
+            // This is temporary while I make a decent fallback UI.
+            <Suspense fallback={<h1>Loading...</h1>}>
+                <Home />
+            </Suspense>
         )
     }
 }

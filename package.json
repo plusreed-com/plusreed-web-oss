@@ -1,9 +1,10 @@
 {
   "name": "plusreed-web",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "7.2.2",
+    "@emotion/babel-preset-css-prop": "^10.0.7",
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
     "@svgr/webpack": "4.1.0",
@@ -117,11 +118,6 @@
     "watchPlugins": [
       "D:\\Source\\plusreed-web\\node_modules\\jest-watch-typeahead\\filename.js",
       "D:\\Source\\plusreed-web\\node_modules\\jest-watch-typeahead\\testname.js"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
     ]
   }
 }
