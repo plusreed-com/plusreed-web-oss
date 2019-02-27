@@ -1,28 +1,43 @@
 import React, { Component } from 'react';
 import * as DummyPicture from './assets/images/dummy.png';
 import {
-    CenterScreen,
-    Container,
-    HeroBody,
-    Subtitle,
-    Title
+    Heading,
+    Subheading
 } from './styles';
+import Helmet from 'react-helmet';
 
-// Lazy-load FursonaPicture component.
+const Bar = React.lazy(() => import('./components/Bar'));
+const DevBar = React.lazy(() => import('./components/DevBar'));
 const FursonaPicture = React.lazy(() => import('./components/FursonaPicture'));
 
 class Home extends Component {
     render() {
         return (
-            <div css={CenterScreen}>
-                <div css={HeroBody}>
-                    <div css={Container}>
-                        <FursonaPicture image={DummyPicture} />
-                        <h1 css={Title}>Hi, I'm Reed</h1>
-                        <h2 css={Subtitle}>I'm a 17 year old developer of sorts.</h2>
-                    </div>
-                </div>
-            </div>
+            <>
+                <Helmet bodyAttributes={{
+                    style: 'background-color: #2B2B2B'
+                }} />
+
+                {/* Simple striped bar in development mode */}
+                {
+                    process.env.NODE_ENV === 'development' ||
+                    process.env.NODE_ENV === 'test' ? 
+                        <DevBar text={"dev build"} /> 
+                        : ''
+                }
+
+                <Bar />
+
+                <FursonaPicture image={DummyPicture} />
+
+                <h1 css={Heading}>
+                    👋 Hey, I'm Reed.
+                </h1>
+
+                <p css={Subheading}>
+                    I'm a developer of sorts.
+                </p>
+            </>
         )
     }
 }
