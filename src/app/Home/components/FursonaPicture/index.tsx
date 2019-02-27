@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { css } from '@emotion/core';
+import {
+    Spin
+} from './styles';
 
 interface IProps {
     image: any
@@ -18,17 +21,7 @@ class FursonaPicture extends Component<IProps> {
                     background: url(${this.props.image});
                     border-radius: 50%;
                     &:hover {
-                        animation: spin 0.75s ease-in-out;
-
-                        @keyframes spin {
-                            from {
-                                transform: rotate(0deg);
-                            }
-
-                            to {
-                                transform: rotate(360deg);
-                            }
-                        }
+                        animation: ${Spin} 0.75s ease-in-out;
                     }
                 `}
                 src={this.props.image}
