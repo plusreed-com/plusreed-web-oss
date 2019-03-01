@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <App />,
-    document.querySelector('[data-react-root]') || 
+    document.querySelector('[data-react-root]') ||
     document.getElementById('app-mount')
 );
 

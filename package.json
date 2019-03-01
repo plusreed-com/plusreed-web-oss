@@ -7,6 +7,10 @@
     "@emotion/babel-preset-css-prop": "^10.0.7",
     "@emotion/core": "^10.0.7",
     "@emotion/styled": "^10.0.7",
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "@svgr/webpack": "4.1.0",
     "@types/jest": "24.0.6",
     "@types/node": "11.9.4",
@@ -30,7 +34,7 @@
     "eslint-plugin-flowtype": "2.50.1",
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
-    "eslint-plugin-react": "7.12.4",
+    "eslint-plugin-react": "^7.12.4",
     "file-loader": "2.0.0",
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "7.0.1",
@@ -66,7 +70,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "xo && node scripts/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -121,5 +125,12 @@
       "D:\\Source\\plusreed-web\\node_modules\\jest-watch-typeahead\\filename.js",
       "D:\\Source\\plusreed-web\\node_modules\\jest-watch-typeahead\\testname.js"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-xo-react": "^0.18.0",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "extends": "xo-react"
   }
 }
