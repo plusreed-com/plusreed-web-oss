@@ -9,7 +9,8 @@ interface IProps {
     projectTextColor: string,
     projectName: string,
     projectImage: any,
-    projectImageBackground?: any,
+    projectImageIsDraggable?: boolean,
+    projectImageBackgroundColor?: any,
     projectDescription: string,
     githubUrl: string
 }
@@ -23,7 +24,7 @@ const ProjectCard: React.FunctionComponent<IProps> = (props) => (
             <img 
                 src={props.projectImage}
                 css={css`
-                    background: ${props.projectImageBackground || 'transparent'};
+                    background: ${props.projectImageBackgroundColor || 'transparent'};
                     width: 32px;
                     height: 32px;
                     border-radius: 50%;
@@ -34,6 +35,7 @@ const ProjectCard: React.FunctionComponent<IProps> = (props) => (
                     margin-right: 10px;
                     display: inline-block;
                 `}
+                draggable={props.projectImageIsDraggable || false}
             />
             <span css={css`
                     font-family: 'Roboto', sans-serif;
