@@ -8,6 +8,12 @@ import {
 
 import Helmet from 'react-helmet';
 
+// Import Bootstrap components.
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 // Lazy-load components
 const Bar = React.lazy(() => import('./components/Bar'));
 const DevBar = React.lazy(() => import('./components/DevBar'));
@@ -32,26 +38,30 @@ class Home extends Component {
                 }
 
                 <Bar />
-
-                <FursonaPicture image={DummyPicture} />
-
-                <h1 css={Heading}>
-                    👋 Hey, I'm Reed.
-                </h1>
-
-                <p css={Subheading}>
-                    I'm a developer of sorts.
-                </p>
-
-                <ProjectCard
-                    projectBackgroundColor={"#7089DB"}
-                    projectDescriptionBackgroundColor={"#9BAFAF"}
-                    projectTextColor={"#2E3228"}
-                    projectName={"Bearbot"}
-                    projectDescription={"Test card"}
-                    projectImage={DummyPicture}
-                    githubUrl={"https://github.com/Bearbot/Bearbot"}
-                />
+                <Container>
+                    <Row>
+                        <Col sm>
+                            <FursonaPicture image={DummyPicture} />
+                            <h1 css={Heading}>
+                                👋 Hey, I'm Reed.
+                            </h1>
+                            <p css={Subheading}>
+                                I'm a developer of sorts.
+                            </p>
+                        </Col>
+                        <Col lg>
+                            <ProjectCard
+                                projectBackgroundColor={"#7089DB"}
+                                projectDescriptionBackgroundColor={"#9BAFAF"}
+                                projectTextColor={"#2E3228"}
+                                projectName={"Bearbot"}
+                                projectDescription={"Test card"}
+                                projectImage={DummyPicture}
+                                githubUrl={"https://github.com/Bearbot/Bearbot"}
+                            />
+                        </Col>
+                    </Row>
+                </Container>
 
                 { /* <AbuseIPDBBadge uid={19066} /> */ }
             </>
