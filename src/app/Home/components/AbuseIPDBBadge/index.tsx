@@ -10,7 +10,11 @@ const AbuseIPDBBadge: React.SFC<IProps> = (props) => {
     return (
         <a
             href={`https://www.abuseipdb.com/user/${props.uid}`}
-            title="AbuseIPDB is an IP address blacklist for webmasters and sysadmins to report IP addresses engaging in abusive behavior on their networks"
+            title="
+                    AbuseIPDB is an IP address blacklist for webmasters
+                    and sysadmins to report IP addresses engaging in abusive
+                    behavior on their networks
+            "
         >
             <img 
                 src={`https://www.abuseipdb.com/contributor/${props.uid}.svg`}

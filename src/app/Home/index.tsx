@@ -25,9 +25,11 @@ class Home extends Component {
     render() {
         return (
             <>
-                <Helmet bodyAttributes={{
-                    style: 'background-color: #2B2B2B'
-                }} />
+                <Helmet 
+                    bodyAttributes={{
+                        style: 'background-color: #2B2B2B'
+                    }}
+                />
 
                 {
                     /* Striped bar in development/test */
@@ -41,6 +43,7 @@ class Home extends Component {
                 <Container>
                     <Row>
                         <Col sm>
+                            {/* Small Col */}
                             <FursonaPicture image={DummyPicture} />
                             <h1 css={Heading}>
                                 👋 Hey, I'm Reed.
@@ -48,24 +51,24 @@ class Home extends Component {
                             <p css={Subheading}>
                                 I'm a developer of sorts.
                             </p>
+                            {/* <AbuseIPDBBadge uid={19066} /> */}
                         </Col>
                         <Col lg css={css`
                             margin-top: 30px;
                         `}>
+                            {/* Large Col */}
                             <ProjectCard
                                 projectBackgroundColor={"#7089DB"}
                                 projectDescriptionBackgroundColor={"#9BAFAF"}
                                 projectTextColor={"#2E3228"}
                                 projectName={"Bearbot"}
-                                projectDescription={"Test card"}
+                                projectDescription={"An open-source Discord bot made with JavaScript and Discord.js."}
                                 projectImage={DummyPicture}
                                 githubUrl={"https://github.com/Bearbot/Bearbot"}
                             />
                         </Col>
                     </Row>
                 </Container>
-
-                { /* <AbuseIPDBBadge uid={19066} /> */ }
             </>
         )
     }
