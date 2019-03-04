@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as DummyPicture from './assets/images/dummy.png';
-import { css } from '@emotion/core';
+import { Global, css } from '@emotion/core';
 
 import {
     Heading,
@@ -25,6 +25,16 @@ class Home extends Component {
     render() {
         return (
             <>
+                <Global 
+                    styles={css`
+                        @import url('https://fonts.googleapis.com/css?family=Roboto');
+                        
+                        head, body {
+                            margin: 0;
+                            padding: 0;
+                        }
+                    `}
+                />
                 <Helmet 
                     bodyAttributes={{
                         style: 'background-color: #2B2B2B'
