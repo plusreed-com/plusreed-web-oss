@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import * as DummyPicture from './assets/images/dummy.png';
 import { Global, css } from '@emotion/core';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import {
     Heading,
@@ -8,6 +8,12 @@ import {
 } from './styles';
 
 import Helmet from 'react-helmet';
+
+// Dummy image
+import * as DummyPicture from './assets/images/dummy.png';
+
+// Routes
+import Projects from '../Projects';
 
 // Import Bootstrap components.
 import Container from 'react-bootstrap/Container';
@@ -19,7 +25,12 @@ const Bar = React.lazy(() => import('./components/Bar'));
 const DevBar = React.lazy(() => import('./components/DevBar'));
 const FursonaPicture = React.lazy(() => import('./components/FursonaPicture'));
 const AbuseIPDBBadge = React.lazy(() => import('./components/AbuseIPDBBadge'));
-const ProjectCard = React.lazy(() => import('./components/ProjectCard'));
+
+const HomePage = () => (
+    <>
+        <h1>Home</h1>
+    </>
+);
 
 class Home extends Component {
     render() {
@@ -28,7 +39,7 @@ class Home extends Component {
                 <Global 
                     styles={css`
                         @import url('https://fonts.googleapis.com/css?family=Roboto');
-                        
+
                         head, body {
                             margin: 0;
                             padding: 0;
@@ -50,35 +61,47 @@ class Home extends Component {
                 }
 
                 <Bar />
-                <Container>
-                    <Row>
-                        <Col sm>
-                            {/* Small Col */}
-                            <FursonaPicture image={DummyPicture} />
-                            <h1 css={Heading}>
-                                👋 Hey, I'm Reed.
-                            </h1>
-                            <p css={Subheading}>
-                                I'm a developer of sorts.
-                            </p>
-                            {/* <AbuseIPDBBadge uid={19066} /> */}
-                        </Col>
-                        <Col lg css={css`
-                            margin-top: 30px;
-                        `}>
-                            {/* Large Col */}
-                            <ProjectCard
-                                projectBackgroundColor={"#7089DB"}
-                                projectDescriptionBackgroundColor={"#9BAFAF"}
-                                projectTextColor={"#2E3228"}
-                                projectName={"Bearbot"}
-                                projectDescription={"An open-source Discord bot made with JavaScript and Discord.js."}
-                                projectImage={DummyPicture}
-                                githubUrl={"https://github.com/Bearbot/Bearbot"}
-                            />
-                        </Col>
-                    </Row>
-                </Container>
+                <Router>
+                    <Container>
+                        <Row>
+                            <Col sm>
+                                {/* Small Col */}
+                                <FursonaPicture image={DummyPicture} />
+                                <h1 css={Heading}>
+                                    👋 Hey, I'm Reed.
+                                </h1>
+                                <p css={Subheading}>
+                                    I'm a developer of sorts.
+                                </p>
+                                <Link 
+                                    to="/"
+                                    css={css`
+                                        padding-left: 30px;
+                                    `}
+                                >
+                                    Home
+                                </Link>
+                                <br />
+                                <Link 
+                                    to="/projects"
+                                    css={css`
+                                        padding-left: 30px;
+                                    `}
+                                >
+                                    Projects
+                                </Link>
+                                {/* <AbuseIPDBBadge uid={19066} /> */}
+                            </Col>
+                            <Col lg css={css`
+                                margin-top: 30px;
+                            `}>
+                                {/* Large Col */}
+                                <Route path="/" exact component={HomePage} />
+                                <Route path="/projects" component={Projects} />
+                            </Col>
+                        </Row>
+                    </Container>
+                </Router>
             </>
         )
     }
