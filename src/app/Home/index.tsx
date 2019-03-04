@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as DummyPicture from './assets/images/dummy.png';
+import { css } from '@emotion/core';
 
 import {
     Heading,
@@ -9,7 +10,6 @@ import {
 import Helmet from 'react-helmet';
 
 // Import Bootstrap components.
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -49,7 +49,9 @@ class Home extends Component {
                                 I'm a developer of sorts.
                             </p>
                         </Col>
-                        <Col lg>
+                        <Col lg css={css`
+                            margin-top: 30px;
+                        `}>
                             <ProjectCard
                                 projectBackgroundColor={"#7089DB"}
                                 projectDescriptionBackgroundColor={"#9BAFAF"}
