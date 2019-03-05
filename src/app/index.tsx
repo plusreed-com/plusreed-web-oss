@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
-import { css, Global } from '@emotion/core';
+
+import {
+    css,
+    Global
+} from '@emotion/core';
+
 import Helmet from 'react-helmet';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom';
 
 // Import Bootstrap components
 import Container from 'react-bootstrap/Container';
@@ -79,8 +89,8 @@ class App extends Component {
                                 margin-top: 30px;
                             `}>
                                 {/* Large Col */}
-                                <Route path="/" exact component={About} />
-                                <Route path="/projects" component={Projects} />
+                                <Route path="/" exact component={() => <About />} />
+                                <Route path="/projects" component={() => <Projects />} />
                             </Col>
                         </Row>
                     </Container>

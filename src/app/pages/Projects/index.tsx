@@ -9,7 +9,7 @@ import ProjectCard from './components/ProjectCard';
 // Assets
 import Bearbot from './assets/images/bearbot.png';
 
-const Projects = () => (
+const Projects: React.FunctionComponent<{}> = () => (
     <>
         <h1 css={Heading}>Projects</h1>
         <p css={Subtitle}>These are some projects I've worked on.</p>

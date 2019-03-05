@@ -1,9 +1,10 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './app';
 import Fallback from './app/components/Fallback';
 import * as serviceWorker from './serviceWorker';
+
+const App = React.lazy(() => import('./app'));
 
 ReactDOM.render(
     <Suspense fallback={<Fallback />}>

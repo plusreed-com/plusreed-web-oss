@@ -1,21 +1,21 @@
 import React from 'react';
 import { css } from '@emotion/core';
+import {
+    Heading,
+    Subheading
+} from './styles';
 
 /**
  * @todo Move CSS to styles.
  * @todo Add more information to this.
  */
-const About = () => (
+const About: React.FunctionComponent<{}> = () => (
     <>
-        <h1 css={css`
-            color: #fff;
-        `}>
+        <h1 css={Heading}>
             About
         </h1>
-        <p css={css`
-            color: #fff;
-        `}>
-            Hey there, I'm Reed! I'm a Node.js developer who likes making websites and software.
+        <p css={Subheading}>
+            Hey there, I'm Reed! I'm a Node.js developer who likes making websites with React.
         </p>
     </>
 );
