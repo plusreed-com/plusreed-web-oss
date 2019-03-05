@@ -1,4 +1,4 @@
-import React, { Component, Suspense } from 'react';
+import React, { Component } from 'react';
 import { css, Global } from '@emotion/core';
 import Helmet from 'react-helmet';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
@@ -23,7 +23,7 @@ class App extends Component {
             /**
              * @todo Make a better fallback UI.
              */
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <>
                 <Global 
                     styles={css`
                         @import url('https://fonts.googleapis.com/css?family=Roboto');
@@ -85,7 +85,7 @@ class App extends Component {
                         </Row>
                     </Container>
                 </Router>
-            </Suspense>
+            </>
         )
     }
 }

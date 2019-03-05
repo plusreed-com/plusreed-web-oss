@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './app';
+import Fallback from './app/components/Fallback';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <App />,
+    <Suspense fallback={<Fallback />}>
+        <App />
+    </Suspense>,
     document.querySelector('[data-react-root]') ||
     document.getElementById('app-mount')
 );
