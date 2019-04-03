@@ -8,8 +8,8 @@ import {
 import Helmet from 'react-helmet';
 
 import {
-    BrowserRouter as Router,
-    /* HashRouter as Router, */ // TODO: Maybe use this so routes don't have to be configured in Nginx manually.
+    /* BrowserRouter as Router, */
+    HashRouter as Router,
     Route,
     Link
 } from 'react-router-dom';
