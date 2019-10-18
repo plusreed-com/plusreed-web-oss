@@ -37,7 +37,7 @@ class Home extends Component {
                 />
                 <Helmet 
                     bodyAttributes={{
-                        style: 'background-color: #2B2B2B'
+                        class: ['bg-gray-900']
                     }}
                 />
 
@@ -50,6 +50,7 @@ class Home extends Component {
                 }
 
                 <Bar />
+                {/* @todo: This needs to be switched to Tailwind. */}
                 <Container>
                     <Row>
                         <Col sm>
